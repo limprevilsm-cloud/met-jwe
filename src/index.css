@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #161512;
+    color: #c4c1ba;
+    user-select: none;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #161512;
+}
+::-webkit-scrollbar-thumb {
+  background: #3c3934;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #524e47;
+}
+
+/* Realistic tournament draughts pieces */
+.piece-white {
+  background: radial-gradient(circle at 35% 28%, #ffffff 0%, #f1efe9 56%, #cbc5b7 86%, #9a9384 100%);
+  box-shadow:
+    0 4px 7px rgba(0, 0, 0, 0.55),
+    inset 0 -3px 4px rgba(0, 0, 0, 0.22),
+    inset 0 2px 3px rgba(255, 255, 255, 0.92);
+  border: 1px solid #b5afa2;
+}
+
+.piece-white::after {
+  content: '';
+  position: absolute;
+  inset: 16%;
+  border-radius: 50%;
+  border: 1.5px solid rgba(154, 147, 132, 0.45);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+}
+
+.piece-black {
+  background: radial-gradient(circle at 35% 28%, #524d4a 0%, #2c2a27 56%, #181715 88%, #0a0a09 100%);
+  box-shadow:
+    0 4px 7px rgba(0, 0, 0, 0.65),
+    inset 0 -3px 4px rgba(0, 0, 0, 0.72),
+    inset 0 2px 3px rgba(255, 255, 255, 0.18);
+  border: 1px solid #141312;
+}
+
+.piece-black::after {
+  content: '';
+  position: absolute;
+  inset: 16%;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

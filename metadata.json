@@ -1,0 +1,6 @@
+{
+  "name": "Lidraughts Hoogland — Cours KNDB Niveau 6",
+  "description": "Plateforme interactive de jeu de dames international (10x10) dédiée au Cours Hoogland KNDB Niveau 6 : échiquier d'analyse avec moteur tactique, thèmes stratégiques, combinaisons forcées et taxation positionnelle.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
